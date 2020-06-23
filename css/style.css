@@ -1,0 +1,646 @@
+/* Variables */
+:root {
+	--mainColor: #f67e7d;
+	--mainWhite: #fff;
+}
+
+/* Globale Styles */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Saira Condensed', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Dancing Script', cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: var(--mainColor);
+}
+
+.section-pd {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+
+.section-title {
+	color: var(--mainColor);
+	font-size: 5rem;
+	padding-bottom: 2rem;
+}
+
+.card {
+	border: 0;
+}
+
+.link {
+	color: var(--mainColor);
+}
+
+/********** Sections Styles **********/
+/* Header */
+header {
+	position: relative;
+	height: 100vh;
+	background-color: #000;
+}
+
+header video {
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .5;
+}
+
+/* Navbar */
+nav {
+	transition: all .5s ease;
+}
+
+nav .navbar-brand {
+	font-size: 2.2rem;
+	font-family: 'Dancing Script', cursive;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+
+nav .nav-link span {
+	position: relative;
+	letter-spacing: 1px;
+	font-weight: 500;
+}
+
+nav .nav-link span::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	left: 1px;
+	bottom: -5px;
+	background-color: var(--mainColor);
+	visibility: hidden;
+	transform: scale(0);
+	transition: all .5s ease;
+}
+
+nav .nav-link:hover span::before {
+	visibility: visible;
+	transform: scale(1);
+}
+
+nav .nav-link span.show::before {
+	visibility: visible;
+	transform: scale(1);
+}
+
+nav.sticky {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	background-color: var(--mainWhite);
+	padding: 0rem 1.5rem;
+}
+
+nav.sticky .navbar-brand {
+	color: #242424 !important;
+}
+
+nav.sticky .nav-link {
+	color: #242424 !important;
+}
+
+nav.sticky .navbar-toggler {
+	color: #242424 !important;
+	border: 1px solid #242424;
+}
+/* End of navbar */
+
+.header-text {
+	height: 60vh;
+}
+
+.header-text .subheading {
+	font-size: 1.5rem;
+	position: relative;
+	color: var(--mainWhite);
+}
+
+.header-text .subheading::before {
+	position: absolute;
+	content: "";
+	height: 2px;
+	width: 80%;
+	left: -125px;
+	bottom: 12px;
+	background-color: var(--mainWhite);
+}
+.header-text .subheading::after {
+	position: absolute;
+	content: "";
+	height: 2px;
+	width: 80%;
+	right: -125px;
+	bottom: 12px;
+	background-color: var(--mainWhite);
+}
+
+.header-text .heading {
+	font-size: 7rem;
+	color: var(--mainWhite);
+	transform: scale(1);
+}
+
+/* about */
+#about p {
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+#about h3 {
+	font-size: 4rem;
+	color: var(--mainColor);
+}
+
+#about h2 {
+	font-size: 3rem;
+}
+
+.content {
+	position: relative;
+}
+
+.content:after {
+	content: "";
+	position: absolute;
+	width: 95%;
+	height: 95%;
+	left: 3rem;
+	bottom: 1rem;
+	border: 1px solid rgba(0, 0, 0, .2);
+	transform: rotate(-.5deg);
+}
+
+.content::before {
+	content: "";
+	position: absolute;
+	width: 95%;
+	height: 95%;
+	left: 3rem;
+	bottom: 1rem;
+	border: 1px solid rgba(0, 0, 0, .2);
+	transform: rotate(.5deg);
+	z-index: 1;
+}
+
+@media (max-width: 992px) {
+	.content:after {
+		width: 70%;
+		height: 95%;
+		left: 7rem;
+	}
+
+	.content::before {
+		width: 70%;
+		height: 95%;
+		left: 7rem;
+	}
+}
+@media (max-width: 768px) {
+	.content:after {
+		width: 70%;
+		height: 95%;
+		left: 5rem;
+	}
+
+	.content::before {
+		width: 70%;
+		height: 95%;
+		left: 5rem;
+	}
+}
+@media (max-width: 576px) {
+	.content:after {
+		width: 70%;
+		height: 95%;
+		left: 5rem;
+	}
+
+	.content::before {
+		width: 70%;
+		height: 95%;
+		left: 5rem;
+	}
+}
+@media (max-width: 576px) {
+	.content:after {
+		width: 80%;
+		height: 95%;
+		left: 2rem;
+	}
+
+	.content::before {
+		width: 80%;
+		height: 95%;
+		left: 2rem;
+	}
+}
+
+/* groom&bride */
+#groom-bride {
+	position: relative;
+	padding: 15rem 0;
+}
+
+.overlay-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 350px;
+	background: url(../img/top-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
+}
+.overlay-bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 300px;
+	background: url(../img/bottom-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
+}
+
+#groom-bride .card {
+	background-color: transparent;
+	border: 0;
+}
+
+#groom-bride .card img {
+	width: 200px;
+	height: 200px;
+	display: block;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+#groom-bride h3 {
+	font-size: 2rem;
+}
+
+#groom-bride p {
+	font-size: 1.2rem;
+}
+
+#groom-bride .col-md-6 {
+	position: relative;
+}
+
+#groom-bride .col-md-6:before {
+	position: absolute;
+	content: "";
+	width: 95%;
+	height: 95%;
+	top: 4.5rem;
+	left: .8rem;
+	border: 1px solid rgba(0, 0, 0, .2);
+	transform: rotate(.5deg);
+}
+
+#groom-bride .col-md-6:after {
+	position: absolute;
+	content: "";
+	width: 95%;
+	height: 95%;
+	top: 4.5rem;
+	left: .8rem;
+	border: 1px solid rgba(0, 0, 0, .2);
+	transform: rotate(-.5deg);
+}
+
+/* lovestory */
+.lovestory {
+	position: relative;
+}
+
+.lovestory::before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 3px;
+	background-color: var(--mainColor);
+	top: 0;
+	left: 50%;
+}
+
+@media (max-width: 992px) {
+	.lovestory::before {
+		display: none;
+	}
+}
+
+.lovestory-item {
+	overflow: hidden;
+	position: relative;
+}
+
+.lovestory-text {
+	width: 43%;
+	position: relative;
+}
+
+@media (max-width: 992px) {
+	.lovestory-text {
+		width: 45%;
+		float: none;
+		margin: auto;
+	}
+}
+
+.lovestory-text::before {
+	content: "";
+	position: absolute;
+	width: 98%;
+	height: 90%;
+	top: .5rem;
+	left: .5rem;
+	border: 1px solid rgba(0, 0, 0, .2);
+	transform: rotate(-.5deg);
+}
+
+@media (max-width: 576px) {
+	.lovestory-text::before {
+		height: 95%;
+		left: .2rem;
+	}
+}
+.lovestory-text::after {
+	content: "";
+	position: absolute;
+	width: 98%;
+	height: 90%;
+	top: .5rem;
+	left: .5rem;
+	border: 1px solid rgba(0, 0, 0, .2);
+	transform: rotate(.5deg);
+}
+
+@media (max-width: 576px) {
+	.lovestory-text::after {
+		height: 95%;
+		left: .2rem;
+	}
+}
+
+.lovestory-text h6 {
+	text-align: right;
+}
+
+.lovestory-text h3 {
+	color: var(--mainColor);
+	text-align: right;
+}
+
+.lovestory-text p {
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.lovestory-badge {
+	width: 100px;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+	border: 4px solid var(--mainColor);
+	border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+	.lovestory-badge {
+		position: unset;
+		margin: auto;
+		margin-bottom: 1rem;
+	}
+}
+
+/* greetings */
+#geetings {
+	background-color: rgb(70, 70, 70);
+}
+
+#geetings .card img {
+	width: 5rem;
+}
+
+#geetings .card p {
+	font-size: 1.1rem;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 1px;
+}
+
+/* people */
+#people img {
+	width: 200px;
+	height: 200px;
+}
+
+/* when & where */
+#when-where .icon {
+	color: var(--mainColor);
+}
+
+#when-where .place-item-1 {
+	background-image: url(../img/place-1.jpg);
+}
+#when-where .place-item-2 {
+	background-image: url(../img/place-2.jpg);
+}
+#when-where .place-item-3 {
+	background-image: url(../img/place-3.jpg);
+}
+
+#when-where a.btn {
+	color: var(--mainColor);
+	font-weight: 600;
+	padding: .2rem .7rem;
+	border: 1px solid #f67e7d;
+	letter-spacing: 1px;
+	transition: all .5s ease;
+}
+
+#when-where a.btn:hover {
+	background-color: var(--mainColor);
+	color: var(--mainWhite);
+}
+
+/* RSVP */
+#RSVP {
+	background-color: #dcf4e6;
+}
+
+#RSVP form textarea {
+	resize: none;
+}
+
+#RSVP .btn {
+	padding: .5rem 1rem;
+	background-color: var(--mainColor);
+	border-radius: 2rem;
+	font-size: 1.1rem;
+	transition: all .5s ease;
+}
+
+#RSVP .btn:hover {
+	background-color: transparent;
+	border: 1px solid var(--mainColor);
+	color: var(--mainColor) !important;
+}
+
+#RSVP input:active {
+	border: none;
+	outline: none;
+}
+
+/* Gallery */
+.gallery-item {
+	margin-bottom: 1.5rem;
+	min-height: 30rem;
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all .5s ease;
+}
+
+.gallery-item-1 {
+	background-image: url(../img/gallery-1.jpg);
+}
+.gallery-item-2 {
+	background-image: url(../img/gallery-2.jpg);
+}
+.gallery-item-3 {
+	background-image: url(../img/gallery-3.jpg);
+}
+.gallery-item-4 {
+	background-image: url(../img/gallery-4.jpg);
+}
+.gallery-item-5 {
+	background-image: url(../img/gallery-5.jpg);
+}
+.gallery-item-6 {
+	background-image: url(../img/gallery-6.jpg);
+}
+.gallery-item-7 {
+	background-image: url(../img/gallery-7.jpg);
+}
+.gallery-item-8 {
+	background-image: url(../img/gallery-8.jpg);
+}
+
+.gallery-item a {
+	color: var(--mainColor);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--mainWhite);
+	width: 3rem;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	border-radius: 50%;
+	transition: all .5s ease;
+	cursor: zoom-in;
+	display: none;
+}
+
+.gallery-item:hover a {
+	display: block;
+}
+
+.gallery-item:hover .overlay {
+	background-color: rgba(246, 126, 125, .7);
+}
+
+/* footer */
+footer {
+	position: relative;
+	font-size: 1.2rem;
+}
+
+footer .social-icons a {
+	width: 2.5rem;
+	height: 2.5rem;
+	text-align: center;
+	line-height: 2.5rem;
+	border-radius: 50%;
+	color: var(--mainWhite);
+	background-color: var(--mainColor);
+}
+
+footer .social-icons a i {
+	margin-right: 0;
+}
+
+footer a {
+	color: var(--mainColor);
+	margin-bottom: .5rem;
+}
+
+footer a i {
+	margin-right: .5rem;
+}
+
+footer .totop {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	text-align: center;
+	border: 1px solid var(--mainColor);
+	border-radius: 50%;
+}
+
+footer .totop i {
+	margin-right: 0;
+	font-size: 1.5rem;
+}
